@@ -1,0 +1,11 @@
+{
+  "name": "red-rising-engine",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/borisyankov/red-rising-engine.git",
+  "author": "Boris Yankov <borisyankov@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.2.2"
+  }
+}
