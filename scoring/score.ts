@@ -58,7 +58,11 @@ export const unique = (arr: string[]) => [...new Set(arr)];
 
 export const areUnique = (arr: string[]) => arr.length === unique(arr).length;
 
-const calculateScoreForCards = (cards: Card[]) => 0;
+export const calculateScoreForCards = (cards: Card[]): number =>
+  cards.reduce((total: number, card: Card) => {
+    total += card.coreValue;
+    return total;
+  }, 0);
 
 const calculateTotalScore = (playerState: PlayerState) =>
   123 + // perform end of game actions
