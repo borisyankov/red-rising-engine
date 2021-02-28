@@ -33,7 +33,6 @@ export type GameState = {
 };
 
 export type PlayerState = {
-  atEndOfGameAbilities: any[];
   cards: Card[];
   fleetTrackPosition: number;
   helium: number;

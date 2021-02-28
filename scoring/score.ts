@@ -2,7 +2,7 @@ import { Color, Card, PlayerState, GameState, Board } from "../types";
 
 const fleetTrackVPs = [0, 1, 3, 6, 10, 15, 21, 28, 34, 39, 43];
 
-const getCards = (input: PlayerState | Board | Card[]): Card[] => {
+export const getCards = (input: PlayerState | Board | Card[]): Card[] => {
   if (Array.isArray(input)) {
     return input;
   } else if ("cards" in input) {
@@ -58,9 +58,11 @@ export const unique = (arr: string[]) => [...new Set(arr)];
 
 export const areUnique = (arr: string[]) => arr.length === unique(arr).length;
 
+// export const calculateScoreForCard = (card: Card[]): number => 0;
+
 export const calculateScoreForCards = (cards: Card[]): number =>
   cards.reduce((total: number, card: Card) => {
-    total += card.coreValue;
+    total += card.coreValue; // + card.getEndGameBonusValue({});
     return total;
   }, 0);
 
