@@ -1,5 +1,5 @@
+import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
-import { Card, PlayerState } from "../../types";
 
 export const roque: Card = {
   name: "Roque",

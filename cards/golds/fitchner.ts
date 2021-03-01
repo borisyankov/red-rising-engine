@@ -5,6 +5,7 @@ export const fitchner: Card = {
   name: "Fitchner",
   color: "gold",
   coreValue: 25,
+  deployAbility: "If deployed to the Institute, place 1 Influence there.",
   endGameBonuses: "{10} if with a Red. {10} if with Servo.",
   getEndGameBonusValue: ({ p }) => [
     { vp: 10, if: isWith(p, "red") },

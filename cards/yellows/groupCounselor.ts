@@ -7,5 +7,5 @@ export const groupCounselor: Card = {
   deployAbility:
     "Choose up to 3 banished cards and place each of them either on the top or bottom of the deck.",
   endGameBonuses: "{-1} per banished card.",
-  getEndGameBonusValue: ({ g }) => [{ vp: -g.banished.length }],
+  getEndGameBonusValue: ({ g }) => [{ vp: -1 * g.banished.length }],
 };

@@ -1,5 +1,5 @@
+import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
-import { Card, PlayerState } from "../../types";
 
 export const aja: Card = {
   name: "Aja",

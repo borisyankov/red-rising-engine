@@ -1,4 +1,4 @@
-import { Card, PlayerState } from "../../types";
+import { Card } from "../../types";
 
 export const uncleNarol: Card = {
   name: "Uncle Narol",

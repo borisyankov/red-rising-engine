@@ -29,7 +29,7 @@ export * from "./coppers/timony";
 export * from "./golds/aja";
 export * from "./golds/antonia";
 export * from "./golds/ashLord";
-export * from "./golds/boneRiders";
+export * from "./golds/boneriders";
 export * from "./golds/cassius";
 export * from "./golds/fitchner";
 export * from "./golds/karnus";
@@ -94,7 +94,7 @@ export * from "./pinks/matteo";
 export * from "./pinks/theodora";
 
 // Reds
-export * from "./reds/arius";
+export * from "./reds/arlus";
 export * from "./reds/dancer";
 export * from "./reds/darrow";
 export * from "./reds/deanna";

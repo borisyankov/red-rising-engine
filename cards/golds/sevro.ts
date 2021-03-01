@@ -11,7 +11,7 @@ export const sevro: Card = {
   getEndGameBonusValue: ({ p }) => [
     {
       vp: 20,
-      if: isWith(p, "The Howlers") || isWith(p, "Victra") || isWith(p, "red"),
+      if: isWith(p, "Victra") || isWith(p, "The Howlers") || isWith(p, "red"),
     },
   ],
 };

@@ -11,7 +11,7 @@ export const tactus: Card = {
   getEndGameBonusValue: ({ p }) => [
     {
       vp: 20,
-      if: isWith(p, "Octavia") || isWith(p, "Darrow") || isWith(p, "Pink"),
+      if: isWith(p, "Octavia") || isWith(p, "Darrow") || isWith(p, "pink"),
     },
   ],
 };

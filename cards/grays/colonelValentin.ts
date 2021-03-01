@@ -1,4 +1,5 @@
 import { Card } from "../../types";
+import { countOf } from "../../scoring/score";
 
 export const colonelValentin: Card = {
   name: "Colonel Valentin",
@@ -9,4 +10,5 @@ export const colonelValentin: Card = {
   endOfGameAbility:
     "You may treat this card as if it is any one other color (in addition to Gray).",
   endGameBonuses: "{5} for each Gold on all locations.",
+  getEndGameBonusValue: ({ g }) => [{ vp: 5 * countOf(g.board, "gold") }],
 };

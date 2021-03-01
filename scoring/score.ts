@@ -38,9 +38,7 @@ export const notWith = (
   str: Color | string
 ): boolean => !isWith(input, str);
 
-const calculateMostInfluence = () => 0;
-
-export const isFirstOnFleetTrack = (
+export const isFurthestOrTiedOnFleetTrack = (
   gameState: GameState,
   playerState: PlayerState
 ) => false;
@@ -50,9 +48,12 @@ export const isFleetTrackPosition = (
   positions: number[]
 ) => positions.includes(playerState.fleetTrackPosition);
 
-export const hasMostInfluence = (playerState: PlayerState) => false;
+export const haveMostInfluence = (
+  gameState: GameState,
+  playerState: PlayerState
+) => false;
 
-export const haveMostHelium = (playerState: PlayerState) => false;
+export const haveMostOrTiedForHelium = (playerState: PlayerState) => false;
 
 export const unique = (arr: string[]) => [...new Set(arr)];
 

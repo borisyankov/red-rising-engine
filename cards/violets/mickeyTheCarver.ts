@@ -5,6 +5,8 @@ export const mickeyTheCarver: Card = {
   name: "Mickey the Carver",
   color: "violet",
   coreValue: 15,
+  deployAbility:
+    "You may banish a Red from your hand. If you do, reveal cards from the deck until you find a Gold. Gain it and place the revealed cards at the bottom of the deck in any order.",
   endGameBonuses:
     "{10} if there is at least 1 banished Red. {10} if with a Gold.",
   getEndGameBonusValue: ({ g, p }) => [

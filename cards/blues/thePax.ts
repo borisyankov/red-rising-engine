@@ -1,4 +1,4 @@
-import { Card, PlayerState } from "../../types";
+import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
 
 export const thePax: Card = {

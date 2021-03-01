@@ -8,7 +8,7 @@ export const ashLord: Card = {
   deployAbility:
     "Banish all Blues from this location. If this banishes 2 or more Blues, regain Ash Lord.",
   endGameBonuses: "{5} for each Blue. {5} for each banished Blue.",
-  getEndGameBonusValue: ({ p, g }) => [
+  getEndGameBonusValue: ({ g, p }) => [
     { vp: 5 * countOf(p, "blue") },
     { vp: 5 * countOf(g.banished, "blue") },
   ],

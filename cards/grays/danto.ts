@@ -1,4 +1,4 @@
-import { Card, PlayerState } from "../../types";
+import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
 export const danto: Card = {
@@ -10,7 +10,8 @@ export const danto: Card = {
   endOfGameAbility:
     "You may treat this card as if it is any one other color (in addition to Gray).",
   endGameBonuses: "{5} for each Copper & White on all locations.",
-  getEndGameBonusValue: ({ p }) => [
-    { vp: countOf(p, "copper") * 5 + countOf(p, "white") * 5 }, // TODO: on LOCATIONS
+  getEndGameBonusValue: ({ g }) => [
+    { vp: 5 * countOf(g.board, "copper") },
+    { vp: 5 * countOf(g.board, "white") },
   ],
 };

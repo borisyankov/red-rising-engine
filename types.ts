@@ -26,18 +26,19 @@ export type Board = {
   theInstitute: Card[];
 };
 
-export type GameState = {
-  deck: Card[];
-  banished: Card[];
-  board: Board;
-};
-
 export type PlayerState = {
   cards: Card[];
   fleetTrackPosition: number;
   helium: number;
   sovereignty: boolean;
   influence: number;
+};
+
+export type GameState = {
+  deck: Card[];
+  banished: Card[];
+  board: Board;
+  players: PlayerState[];
 };
 
 export type Card = {

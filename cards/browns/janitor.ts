@@ -1,4 +1,4 @@
-import { Card, PlayerState } from "../../types";
+import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
 export const janitor: Card = {
@@ -9,8 +9,8 @@ export const janitor: Card = {
     "If deployed directly on top of a Green, Yellow, or Blue, move that card to the top of another location and advance once on the Fleet Track.",
   endGameBonuses: "{5} for each Green, Yellow and Blue.",
   getEndGameBonusValue: ({ p }) => [
-    { vp: countOf(p, "green") * 5 },
-    { vp: countOf(p, "yellow") * 5 },
-    { vp: countOf(p, "blue") * 5 },
+    { vp: 5 * countOf(p, "green") },
+    { vp: 5 * countOf(p, "yellow") },
+    { vp: 5 * countOf(p, "blue") },
   ],
 };

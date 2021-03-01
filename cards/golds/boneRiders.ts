@@ -2,7 +2,7 @@ import { isWith } from "../../scoring/score";
 import { Card } from "../../types";
 
 export const boneRiders: Card = {
-  name: "Bone Riders",
+  name: "Boneriders",
   color: "gold",
   coreValue: 15,
   deployAbility: "Gain the Sovereign token.",

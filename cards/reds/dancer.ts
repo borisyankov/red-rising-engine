@@ -1,13 +1,15 @@
 import { Card } from "../../types";
-import { isWith } from "../../scoring/score";
+import { notWith } from "../../scoring/score";
 
 export const dancer: Card = {
   name: "Dancer",
   color: "red",
   coreValue: 8,
+  deployAbility:
+    "Gain 1 Helium. If you have 2 or more other REds, reveal them to gain 2 more Helium.",
   endGameBonuses: "{11} if with no Grays. {11} if with no Golds.",
   getEndGameBonusValue: ({ p }) => [
-    { vp: 11, if: isWith(p, "gray") },
-    { vp: 11, if: isWith(p, "gold") },
+    { vp: 11, if: notWith(p, "gray") },
+    { vp: 11, if: notWith(p, "gold") },
   ],
 };

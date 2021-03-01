@@ -10,5 +10,5 @@ export const cyther: Card = {
   endOfGameAbility:
     "You may treat this card as having the same name as any specific character.",
   endGameBonuses: "{14} if with a Blue.",
-  getEndGameBonusValue: ({ p }) => [{ vp: 14, if: isWith(p, "blue") }],
+  getEndGameBonusValue: ({ p }) => [{ vp: 16, if: isWith(p, "blue") }],
 };

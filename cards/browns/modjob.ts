@@ -9,7 +9,7 @@ export const modjob: Card = {
     "If deployed directly on top of a Red or Brown, deploy that card to the top of another location.",
   endGameBonuses: "{5} for each Red and Brown (including Modjob).",
   getEndGameBonusValue: ({ p }) => [
-    { vp: countOf(p, "red") * 5 },
-    { vp: countOf(p, "brown") * 5 },
+    { vp: 5 * countOf(p, "red") },
+    { vp: 5 * countOf(p, "brown") },
   ],
 };

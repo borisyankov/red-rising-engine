@@ -1,5 +1,5 @@
-import { Card, PlayerState } from "../../types";
-import { countOf, isWith } from "../../scoring/score";
+import { Card } from "../../types";
+import { isWith } from "../../scoring/score";
 
 export const pulseArmorer: Card = {
   name: "Pulse Armorer",

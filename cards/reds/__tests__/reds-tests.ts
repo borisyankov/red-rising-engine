@@ -1,9 +1,9 @@
 import { calculateScoreForCards } from "../../../scoring/score";
-import { arius, dancer, darrow, deanna, eo, harmony, uncleNarol } from "../..";
+import { arlus, dancer, darrow, deanna, eo, harmony, uncleNarol } from "../..";
 
-describe("Arius", () => {
+describe("Arlus", () => {
   test("is worth 10 points on it's own", () => {
-    const cards = [arius];
+    const cards = [arlus];
     const vp = calculateScoreForCards(cards);
     expect(vp).toBe(10);
   });
@@ -45,7 +45,7 @@ describe("Harmony", () => {
   test("is worth 8 points on it's own", () => {
     const cards = [harmony];
     const vp = calculateScoreForCards(cards);
-    expect(vp).toBe(10);
+    expect(vp).toBe(7);
   });
 });
 

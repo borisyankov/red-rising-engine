@@ -1,10 +1,12 @@
-import { isWith } from "../../scoring/score";
 import { Card } from "../../types";
+import { isWith } from "../../scoring/score";
 
 export const lysander: Card = {
   name: "Lysander",
   color: "gold",
   coreValue: 10,
+  deployAbility:
+    "Gain the top card of the deck. Banish Lysander unless you deployed him on Luna.",
   endGameBonuses: "{20} if you have the Sovereign token, Octavia or Cassius.",
   getEndGameBonusValue: ({ p }) => [
     {

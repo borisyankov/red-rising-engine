@@ -1,5 +1,5 @@
 import { Card } from "../../types";
-import { hasMostInfluence } from "../../scoring/score";
+import { haveMostInfluence } from "../../scoring/score";
 
 export const quietus: Card = {
   name: "Quietus",
@@ -9,5 +9,5 @@ export const quietus: Card = {
     "If deployed on the Institute, advance once on the Fleet Track.",
   endGameBonuses:
     "{16} if you have the most Influence on the Institute (or tied for the most)",
-  getEndGameBonusValue: ({ p }) => [{ vp: 16, if: hasMostInfluence(p) }],
+  getEndGameBonusValue: ({ g, p }) => [{ vp: 16, if: haveMostInfluence(g, p) }],
 };

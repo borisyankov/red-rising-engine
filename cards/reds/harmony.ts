@@ -1,10 +1,11 @@
-import { Card, PlayerState } from "../../types";
+import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
 export const harmony: Card = {
   name: "Harmony",
   color: "red",
-  coreValue: 10,
+  coreValue: 7,
+  deployAbility: "An opponent of your choice loses 1 Helium.",
   endGameBonuses: "{33} if with only Reds, Pinks, Browns and/or Obsidians.",
   getEndGameBonusValue: ({ p }) => [
     {

@@ -5,6 +5,8 @@ export const romulus: Card = {
   name: "Romulus",
   color: "gold",
   coreValue: 25,
+  deployAbility:
+    "Gain 1 Blue from this location. Banish Romulus unless you deployed him directly on top of a Gold.",
   endGameBonuses:
     "{15} if you have the Sovereign Token. {-25} if with Roque or Octavia or without a Blue.",
   getEndGameBonusValue: ({ p }) => [

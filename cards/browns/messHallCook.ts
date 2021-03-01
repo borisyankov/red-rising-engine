@@ -1,4 +1,4 @@
-import { Card, PlayerState } from "../../types";
+import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
 export const messHallCook: Card = {
@@ -9,7 +9,7 @@ export const messHallCook: Card = {
     "If deployed directly on top of a Gray or Orange, move that card to the top of another location and advance once on the Fleet Track.",
   endGameBonuses: "{5} for each Gray and Orange.",
   getEndGameBonusValue: ({ p }) => [
-    { vp: countOf(p, "gray") * 5 },
-    { vp: countOf(p, "orange") * 5 },
+    { vp: 5 * countOf(p, "gray") },
+    { vp: 5 * countOf(p, "orange") },
   ],
 };

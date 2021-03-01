@@ -1,5 +1,5 @@
 import { Card } from "../../types";
-import { isFirstOnFleetTrack } from "../../scoring/score";
+import { isFurthestOrTiedOnFleetTrack } from "../../scoring/score";
 
 export const invictus: Card = {
   name: "Administrator",
@@ -9,7 +9,7 @@ export const invictus: Card = {
   endGameBonuses:
     "{16} if you are the most advanced on the Fleet Track (or tied for the most). {-9} if an opponent is more advanced on the Fleet Track.",
   getEndGameBonusValue: ({ g, p }) => [
-    { vp: 16, if: isFirstOnFleetTrack(g, p) },
-    { vp: -9, if: !isFirstOnFleetTrack(g, p) },
+    { vp: 16, if: isFurthestOrTiedOnFleetTrack(g, p) },
+    { vp: -9, if: !isFurthestOrTiedOnFleetTrack(g, p) },
   ],
 };

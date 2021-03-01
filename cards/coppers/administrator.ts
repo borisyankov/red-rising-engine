@@ -1,11 +1,13 @@
 import { Card } from "../../types";
-import { hasMostInfluence } from "../../scoring/score";
+import { haveMostInfluence } from "../../scoring/score";
 
 export const administrator: Card = {
   name: "Administrator",
   color: "copper",
   coreValue: 15,
+  deployAbility:
+    "If deployed on the Institute, reveal the top 2 cards of the deck and place them under this card in any order.",
   endGameBonuses:
     "{15} if you have the most Influence on the Institute (or tied for the most).",
-  getEndGameBonusValue: ({ p }) => [{ vp: 15, if: hasMostInfluence(p) }],
+  getEndGameBonusValue: ({ g, p }) => [{ vp: 15, if: haveMostInfluence(g, p) }],
 };
