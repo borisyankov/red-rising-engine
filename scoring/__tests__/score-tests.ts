@@ -1,5 +1,5 @@
 import { Board, Card, PlayerState } from "../../types";
-import { countOf, getCards } from "../score";
+import { countOf, getCards, isWith } from "../score";
 import * as cards from "../../cards";
 
 const NULL_CARDS: Card[] = [];
@@ -58,5 +58,30 @@ describe("countOf", () => {
     };
     const result = countOf(playerState, "red");
     expect(result).toBe(2);
+  });
+});
+
+describe("isWith", () => {
+  test("if no cards, the not with", () => {
+    const result = isWith(NULL_PLAYER_STATE, "red");
+    expect(result).toBe(false);
+  });
+
+  test("if one red card is in player's hand then it is *with* red", () => {
+    const playerState = {
+      ...NULL_PLAYER_STATE,
+      cards: [cards.darrow],
+    };
+    const result = isWith(playerState, "red");
+    expect(result).toBe(true);
+  });
+
+  test("if some cards but no red then 'false'", () => {
+    const playerState = {
+      ...NULL_PLAYER_STATE,
+      cards: [cards.nero, cards.roque, cards.octavia],
+    };
+    const result = isWith(playerState, "red");
+    expect(result).toBe(false);
   });
 });
