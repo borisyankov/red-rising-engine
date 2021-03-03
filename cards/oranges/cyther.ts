@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
 
-export const cyther: Card = {
+export const CYTHER: Card = {
   name: "Cyther",
   color: "orange",
   coreValue: 14,

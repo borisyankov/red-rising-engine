@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isFurthestOrTiedOnFleetTrack } from "../../scoring/score";
 
-export const invictus: Card = {
+export const INVICTUS: Card = {
   name: "Administrator",
   color: "copper",
   coreValue: 19,

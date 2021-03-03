@@ -94,13 +94,13 @@ export * from "./pinks/matteo";
 export * from "./pinks/theodora";
 
 // Reds
-export * from "./reds/arlus";
-export * from "./reds/dancer";
-export * from "./reds/darrow";
-export * from "./reds/deanna";
-export * from "./reds/eo";
-export * from "./reds/harmony";
-export * from "./reds/uncleNarol";
+export { ARLUS } from "./reds/arlus";
+export { DANCER } from "./reds/dancer";
+export { DARROW } from "./reds/darrow";
+export { DEANNA } from "./reds/deanna";
+export { EO } from "./reds/eo";
+export { HARMONY } from "./reds/harmony";
+export { UNCLE_NAROL } from "./reds/uncleNarol";
 
 // Silvers
 export * from "./silvers/banker";

@@ -1,6 +1,6 @@
 import { Card } from "../../types";
 
-export const sponsor: Card = {
+export const SPONSOR: Card = {
   name: "Sponsor",
   color: "silver",
   coreValue: 20,

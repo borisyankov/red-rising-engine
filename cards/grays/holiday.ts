@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
-export const holiday: Card = {
+export const HOLIDAY: Card = {
   name: "Holiday",
   color: "gray",
   coreValue: 15,

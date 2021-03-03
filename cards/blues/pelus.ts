@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isFleetTrackPosition } from "../../scoring/score";
 
-export const pelus: Card = {
+export const PELUS: Card = {
   name: "Pelus",
   color: "blue",
   coreValue: 5,

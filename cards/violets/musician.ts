@@ -1,6 +1,6 @@
 import { Card } from "../../types";
 
-export const musician: Card = {
+export const MUSICIAN: Card = {
   name: "Musician",
   color: "violet",
   coreValue: 8,

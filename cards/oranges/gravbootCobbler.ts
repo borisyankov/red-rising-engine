@@ -1,7 +1,7 @@
 import { isWith } from "../../scoring/score";
 import { Card } from "../../types";
 
-export const gravbootCobbler: Card = {
+export const GRAVBOOT_COBBLER: Card = {
   name: "Gravboot Cobbler",
   color: "orange",
   coreValue: 16,

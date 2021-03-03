@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { notWith } from "../../scoring/score";
 
-export const lorn: Card = {
+export const LORN: Card = {
   name: "Lorn",
   color: "gold",
   coreValue: 20,

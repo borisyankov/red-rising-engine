@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
 
-export const aja: Card = {
+export const AJA: Card = {
   name: "Aja",
   color: "gold",
   coreValue: 15,

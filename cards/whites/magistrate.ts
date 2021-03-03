@@ -1,6 +1,6 @@
 import { Card } from "../../types";
 
-export const magistrate: Card = {
+export const MAGISTRATE: Card = {
   name: "Magistrate",
   color: "white",
   coreValue: 20,

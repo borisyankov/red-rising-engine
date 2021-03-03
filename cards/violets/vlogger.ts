@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isFurthestOrTiedOnFleetTrack } from "../../scoring/score";
 
-export const vlogger: Card = {
+export const VLOGGER: Card = {
   name: "Vlogger",
   color: "violet",
   coreValue: 7,

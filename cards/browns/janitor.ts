@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
-export const janitor: Card = {
+export const JANITOR: Card = {
   name: "Janitor",
   color: "brown",
   coreValue: 10,

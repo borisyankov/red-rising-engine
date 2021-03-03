@@ -1,6 +1,6 @@
 import { Card } from "../../types";
 
-export const groupCounselor: Card = {
+export const GROUP_COUNSELOR: Card = {
   name: "Group Counselor",
   color: "yellow",
   coreValue: 35,

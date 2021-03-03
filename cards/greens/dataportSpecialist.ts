@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
 
-export const dataportSpecialist: Card = {
+export const DATAPORT_SPECIALIST: Card = {
   name: "Dataport Specialist",
   color: "green",
   coreValue: 9,

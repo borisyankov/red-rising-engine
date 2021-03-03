@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
-export const aliaSnowsparrow: Card = {
+export const ALIA_SNOWSPARROW: Card = {
   name: "Alia Snowsparrow",
   color: "obsidian",
   coreValue: 16,

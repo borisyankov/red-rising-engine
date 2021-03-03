@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isWith, notWith } from "../../scoring/score";
 
-export const aegisCraftsman: Card = {
+export const AEGIS_CRAFTSMAN: Card = {
   name: "Aegis Craftsman",
   color: "orange",
   coreValue: 15,

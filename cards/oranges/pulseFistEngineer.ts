@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
 
-export const pulseFistEngineer: Card = {
+export const PULSE_FIST_ENGINEER: Card = {
   name: "Pulse Fist Engineer",
   color: "orange",
   coreValue: 12,

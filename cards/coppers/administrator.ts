@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { haveMostInfluence } from "../../scoring/score";
 
-export const administrator: Card = {
+export const ADMINISTRATOR: Card = {
   name: "Administrator",
   color: "copper",
   coreValue: 15,

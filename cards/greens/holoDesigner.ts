@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
 
-export const holoDesigner: Card = {
+export const HOLO_DESIGNER: Card = {
   name: "Holo Designer",
   color: "green",
   coreValue: 7,

@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { haveMostOrTiedForHelium } from "../../scoring/score";
 
-export const quicksilver: Card = {
+export const QUICKSILVER: Card = {
   name: "Quicksilver",
   color: "silver",
   coreValue: 40,

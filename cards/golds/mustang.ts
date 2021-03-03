@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { unique } from "../../scoring/score";
 
-export const mustang: Card = {
+export const MUSTANG: Card = {
   name: "Mustang",
   color: "gold",
   coreValue: 20,

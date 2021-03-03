@@ -1,6 +1,6 @@
 import { Card } from "../../types";
 
-export const firewallExpert: Card = {
+export const FIREWALL_EXPERT: Card = {
   name: "Firewall Expert",
   color: "green",
   coreValue: 13,

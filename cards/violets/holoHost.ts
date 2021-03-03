@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { haveMostInfluence } from "../../scoring/score";
 
-export const holoHost: Card = {
+export const HOLO_HOST: Card = {
   name: "Holo Host",
   color: "violet",
   coreValue: 12,

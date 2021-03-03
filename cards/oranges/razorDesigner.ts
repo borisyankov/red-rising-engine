@@ -1,7 +1,7 @@
 import { isWith, notWith } from "../../scoring/score";
 import { Card } from "../../types";
 
-export const razorDesigner: Card = {
+export const RAZOR_DESIGNER: Card = {
   name: "Razor Designer",
   color: "orange",
   coreValue: 17,

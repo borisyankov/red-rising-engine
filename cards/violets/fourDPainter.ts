@@ -1,7 +1,7 @@
 import { areUnique } from "../../scoring/score";
 import { Card } from "../../types";
 
-export const fourDPainter: Card = {
+export const FOUR_D_PAINTER: Card = {
   name: "4D Painter",
   color: "violet",
   coreValue: 9,

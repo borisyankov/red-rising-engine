@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
 
-export const pulseArmorer: Card = {
+export const PULSE_ARMORER: Card = {
   name: "Pulse Armorer",
   color: "orange",
   coreValue: 13,

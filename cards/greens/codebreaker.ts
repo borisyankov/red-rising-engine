@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { areUnique } from "../../scoring/score";
 
-export const codebreaker: Card = {
+export const CODEBREAKER: Card = {
   name: "Codebreaker",
   color: "green",
   coreValue: 8,

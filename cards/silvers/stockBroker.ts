@@ -1,6 +1,6 @@
 import { Card } from "../../types";
 
-export const stockBroker: Card = {
+export const STOCK_BROKER: Card = {
   name: "Stock Broker",
   color: "silver",
   coreValue: 10,

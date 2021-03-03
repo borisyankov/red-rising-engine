@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
-export const bridge: Card = {
+export const BRIDGE: Card = {
   name: "Bridge",
   color: "gray",
   coreValue: 15,

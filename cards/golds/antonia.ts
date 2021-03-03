@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { countOf, isWith } from "../../scoring/score";
 
-export const antonia: Card = {
+export const ANTONIA: Card = {
   name: "Antonia",
   color: "gold",
   coreValue: 15,

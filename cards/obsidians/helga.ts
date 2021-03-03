@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { isWith } from "../../scoring/score";
 
-export const helga: Card = {
+export const HELGA: Card = {
   name: "Helga",
   color: "obsidian",
   coreValue: 14,

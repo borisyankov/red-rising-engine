@@ -1,7 +1,7 @@
 import { Card } from "../../types";
 import { countOf } from "../../scoring/score";
 
-export const modjob: Card = {
+export const MODJOB: Card = {
   name: "Modjob",
   color: "brown",
   coreValue: 10,

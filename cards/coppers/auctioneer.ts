@@ -1,6 +1,6 @@
 import { Card } from "../../types";
 
-export const auctioneer: Card = {
+export const AUCTIONEER: Card = {
   name: "Auctioneer",
   color: "copper",
   coreValue: 12,
