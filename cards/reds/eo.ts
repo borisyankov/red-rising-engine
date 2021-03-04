@@ -4,7 +4,7 @@ import { countOf } from "../../scoring/score";
 export const EO: Card = {
   name: "Eo",
   color: "red",
-  coreValue: 7,
+  coreValue: 10,
   deployAbility:
     "Each opponent must reveal a Red. If they can't, they lose 1 Helium.",
   endGameBonuses:

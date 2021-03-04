@@ -34,10 +34,10 @@ describe("Deanna", () => {
 });
 
 describe("Eo", () => {
-  test("is worth 7 points on it's own", () => {
+  test("is worth 10 points on it's own", () => {
     const cards = [EO];
     const vp = calculateScoreForCards(cards);
-    expect(vp).toBe(7);
+    expect(vp).toBe(10);
   });
 });
 
