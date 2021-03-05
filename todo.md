@@ -19,6 +19,11 @@ More than 15, 20 ?
 Odd
 Even
 
+Highest VP 7-hand ?
+
+5-hand combinations: 134,153,712 (weakest, best)
+7-hand combinations: 36,227,890,512
+
 Least VP:
 
 - The Jackal => no Sovereign Token, is with Darrow or Octavia => -20
@@ -33,3 +38,12 @@ Least VP:
 Least VP in hand
 Most VP in hand
 All cards VP = ???
+How many with no deploy ability
+How many with end game scoring
+
+18 cards allow you to gain other cards - 16% of cards, all Grays, all Oranges and 4 other - Developer; green, drVirany; yellow, Alfrun; obsidian, Jopho; obsidian
+
+13 cards can have negative VP if
+
+Ways to lose a card:
+Aja, Antonia, Roque, Arlus

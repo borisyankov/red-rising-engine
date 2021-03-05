@@ -2,6 +2,12 @@ import { Color, Card, PlayerState, GameState, Board } from "../types";
 
 const fleetTrackVPs = [0, 1, 3, 6, 10, 15, 21, 28, 34, 39, 43];
 
+export const sum = (values: number[]) =>
+  values.reduce((total: number, n: number) => {
+    total += n;
+    return total;
+  }, 0);
+
 export const getCards = (input: PlayerState | Board | Card[]): Card[] => {
   if (Array.isArray(input)) {
     return input;
@@ -62,10 +68,22 @@ export const areUnique = (arr: string[]) => arr.length === unique(arr).length;
 // export const calculateScoreForCard = (card: Card[]): number => 0;
 
 export const calculateScoreForCards = (cards: Card[]): number =>
-  cards.reduce((total: number, card: Card) => {
-    total += card.coreValue; // + card.getEndGameBonusValue({});
-    return total;
-  }, 0);
+  sum(cards.map((card) => card.coreValue)); // + card.getEndGameBonusValue({});
+
+export const calculateEndGameBonus = (
+  g: GameState,
+  p: PlayerState,
+  card: Card
+): number => {
+  if (!card.getEndGameBonusValue) {
+    return 0;
+  }
+
+  const vpz = card.getEndGameBonusValue({ g, p });
+  const valid = vpz.filter((vip) => vip.if === undefined || vip.if);
+  const vps = valid.map((x) => x.vp);
+  return sum(vps);
+};
 
 const calculateTotalScore = (playerState: PlayerState) =>
   123 + // perform end of game actions

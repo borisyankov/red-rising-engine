@@ -1,23 +1,6 @@
-import { Board, Card, PlayerState } from "../../types";
 import { countOf, getCards, isWith } from "../score";
 import * as CARDS from "../../cards";
-
-const NULL_CARDS: Card[] = [];
-
-const NULL_PLAYER_STATE: PlayerState = {
-  cards: [],
-  fleetTrackPosition: 0,
-  helium: 0,
-  sovereignty: false,
-  influence: 0,
-};
-
-const NULL_BOARD: Board = {
-  jupiter: [],
-  mars: [],
-  luna: [],
-  theInstitute: [],
-};
+import { NULL_CARDS, NULL_PLAYER_STATE } from "../../null";
 
 describe("getCards", () => {
   test("if array (of cards) return self", () => {
@@ -31,7 +14,7 @@ describe("getCards", () => {
   });
 
   test("if array (of cards) return self", () => {
-    const result = getCards(NULL_BOARD);
+    const result = getCards(NULL_CARDS);
     expect(result).toHaveLength(0);
   });
 });
