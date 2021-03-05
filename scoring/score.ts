@@ -8,6 +8,8 @@ export const sum = (values: number[]) =>
     return total;
   }, 0);
 
+export const max = (values: number[]) => Math.max.apply(null, values);
+
 export const getCards = (input: Player | Board | Card[]): Card[] => {
   if (Array.isArray(input)) {
     return input;
@@ -35,14 +37,17 @@ export const isWith = (input: Player | Board | Card[], str: Color | string): boo
 
 export const notWith = (input: Player | Board | Card[], str: Color | string): boolean => !isWith(input, str);
 
-export const isFurthestOrTiedOnFleetTrack = (gameState: GameState, player: Player) => false;
+export const isFurthestOrTiedOnFleetTrack = (gameState: GameState, player: Player) =>
+  player.fleetTrackPosition === max(gameState.players.map((x) => x.fleetTrackPosition));
 
 export const isFleetTrackPosition = (player: Player, positions: number[]) =>
   positions.includes(player.fleetTrackPosition);
 
-export const haveMostInfluence = (gameState: GameState, player: Player) => false;
+export const haveMostInfluence = (gameState: GameState, player: Player) =>
+  player.influence === max(gameState.players.map((x) => x.influence));
 
-export const haveMostOrTiedForHelium = (player: Player) => false;
+export const haveMostOrTiedForHelium = (gameState: GameState, player: Player) =>
+  player.helium === max(gameState.players.map((x) => x.helium));
 
 export const unique = (arr: string[]) => [...new Set(arr)];
 
