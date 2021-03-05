@@ -1,4 +1,4 @@
-import { Color, Card, PlayerState, GameState, Board } from "../types";
+import { Color, Card, Player, GameState, Board } from "../types";
 
 const fleetTrackVPs = [0, 1, 3, 6, 10, 15, 21, 28, 34, 39, 43];
 
@@ -8,11 +8,11 @@ export const sum = (values: number[]) =>
     return total;
   }, 0);
 
-export const getCards = (input: PlayerState | Board | Card[]): Card[] => {
+export const getCards = (input: Player | Board | Card[]): Card[] => {
   if (Array.isArray(input)) {
     return input;
   } else if ("cards" in input) {
-    return (input as PlayerState).cards;
+    return (input as Player).cards;
   }
 
   return [
@@ -24,7 +24,7 @@ export const getCards = (input: PlayerState | Board | Card[]): Card[] => {
 };
 
 export const countOf = (
-  input: PlayerState | Board | Card[],
+  input: Player | Board | Card[],
   str: Color | string
 ): number => {
   const cards = getCards(input);
@@ -32,7 +32,7 @@ export const countOf = (
 };
 
 export const isWith = (
-  input: PlayerState | Board | Card[],
+  input: Player | Board | Card[],
   str: Color | string
 ): boolean => {
   const cards = getCards(input);
@@ -40,26 +40,22 @@ export const isWith = (
 };
 
 export const notWith = (
-  input: PlayerState | Board | Card[],
+  input: Player | Board | Card[],
   str: Color | string
 ): boolean => !isWith(input, str);
 
 export const isFurthestOrTiedOnFleetTrack = (
   gameState: GameState,
-  playerState: PlayerState
+  player: Player
 ) => false;
 
-export const isFleetTrackPosition = (
-  playerState: PlayerState,
-  positions: number[]
-) => positions.includes(playerState.fleetTrackPosition);
+export const isFleetTrackPosition = (player: Player, positions: number[]) =>
+  positions.includes(player.fleetTrackPosition);
 
-export const haveMostInfluence = (
-  gameState: GameState,
-  playerState: PlayerState
-) => false;
+export const haveMostInfluence = (gameState: GameState, player: Player) =>
+  false;
 
-export const haveMostOrTiedForHelium = (playerState: PlayerState) => false;
+export const haveMostOrTiedForHelium = (player: Player) => false;
 
 export const unique = (arr: string[]) => [...new Set(arr)];
 
@@ -72,7 +68,7 @@ export const calculateScoreForCards = (cards: Card[]): number =>
 
 export const calculateEndGameBonus = (
   g: GameState,
-  p: PlayerState,
+  p: Player,
   card: Card
 ): number => {
   if (!card.getEndGameBonusValue) {
@@ -85,11 +81,11 @@ export const calculateEndGameBonus = (
   return sum(vps);
 };
 
-const calculateTotalScore = (playerState: PlayerState) =>
+const calculateTotalScore = (player: Player) =>
   123 + // perform end of game actions
-  calculateScoreForCards(playerState.cards) +
-  fleetTrackVPs[playerState.fleetTrackPosition] +
-  playerState.helium * 3 +
-  (playerState.sovereignty ? 10 : 0) +
-  playerState.influence * 4 +
-  (playerState.cards.length <= 7 ? 0 : (playerState.cards.length - 7) * -10);
+  calculateScoreForCards(player.cards) +
+  fleetTrackVPs[player.fleetTrackPosition] +
+  player.helium * 3 +
+  (player.sovereignty ? 10 : 0) +
+  player.influence * 4 +
+  (player.cards.length <= 7 ? 0 : (player.cards.length - 7) * -10);

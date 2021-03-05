@@ -26,7 +26,7 @@ export type Board = {
   theInstitute: Card[];
 };
 
-export type PlayerState = {
+export type Player = {
   cards: Card[];
   fleetTrackPosition: number;
   helium: number;
@@ -38,7 +38,7 @@ export type GameState = {
   deck: Card[];
   banished: Card[];
   board: Board;
-  players: PlayerState[];
+  players: Player[];
 };
 
 export type Card = {
@@ -49,10 +49,7 @@ export type Card = {
   endOfGameAbility?: string;
   endGameBonuses?: string;
   blockAbility?: string;
-  getEndGameBonusValue?: (params: {
-    g: GameState;
-    p: PlayerState;
-  }) => VpPredicate[];
+  getEndGameBonusValue?: (params: { g: GameState; p: Player }) => VpPredicate[];
 };
 
 const houseApollo =

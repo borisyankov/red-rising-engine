@@ -22,7 +22,7 @@ import {
   SEFI,
   UNCLE_NAROL,
 } from "../..";
-import { NULL_GAME_STATE, NULL_PLAYER_STATE } from "../../../null";
+import { NULL_GAME_STATE, NULL_PLAYER } from "../../../null";
 import { CASSIUS } from "../../golds/cassius";
 
 describe("Arlus", () => {
@@ -34,21 +34,21 @@ describe("Arlus", () => {
 
   test("is worth 25 VP extra if with no Golds", () => {
     const cards = [ARLUS, DARROW, DANCER];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, ARLUS);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, ARLUS);
     expect(vp).toBe(25);
   });
 
   test("is not worth anything extra if one or more Golds", () => {
     const cards = [ARLUS, DARROW, NERO];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, ARLUS);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, ARLUS);
     expect(vp).toBe(0);
   });
 });
@@ -62,41 +62,41 @@ describe("Dancer", () => {
 
   test("is worth nothing extra if with Grays and Golds", () => {
     const cards = [DANCER, NERO, HOLIDAY];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DANCER);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DANCER);
     expect(vp).toBe(0);
   });
 
   test("is  worth 11 VP extra if one no Golds but some Grays", () => {
     const cards = [DANCER, HOLIDAY];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DANCER);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DANCER);
     expect(vp).toBe(11);
   });
 
   test("is worth 11 VP extra if one no Grays but some Golds", () => {
     const cards = [DANCER, NERO];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DANCER);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DANCER);
     expect(vp).toBe(11);
   });
 
   test("is worth 11 + 11 VP extra if with no Grays and no Golds", () => {
     const cards = [DANCER, DARROW];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DANCER);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DANCER);
     expect(vp).toBe(22);
   });
 });
@@ -110,11 +110,11 @@ describe("Darrow", () => {
 
   test("is not worth anything extra if not 7 or more cards", () => {
     const cards = [DARROW, EO];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DARROW);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DARROW);
     expect(vp).toBe(0);
   });
 
@@ -128,11 +128,11 @@ describe("Darrow", () => {
       HARMONY,
       UNCLE_NAROL,
     ];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DARROW);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DARROW);
     expect(vp).toBe(30);
   });
 });
@@ -146,31 +146,31 @@ describe("Deanna", () => {
 
   test("is not worth anything extra if alone", () => {
     const cards = [DEANNA];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DEANNA);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DEANNA);
     expect(vp).toBe(0);
   });
 
   test("is not worth anything extra if with no Reds", () => {
     const cards = [DEANNA, GARDENER, DEVELOPER];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DEANNA);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DEANNA);
     expect(vp).toBe(0);
   });
 
   test("is not worth 26 VP extra if with nReds", () => {
     const cards = [DEANNA, DARROW];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, DEANNA);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, DEANNA);
     expect(vp).toBe(26);
   });
 });
@@ -184,41 +184,41 @@ describe("Eo", () => {
 
   test("is worth maximum VP of 60 with all other reds", () => {
     const cards = [ARLUS, DANCER, DARROW, DEANNA, EO, HARMONY, UNCLE_NAROL];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, EO);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, EO);
     expect(vp).toBe(60);
   });
 
   test("is worth -10 VP if with a Gray", () => {
     const cards = [EO, HOLIDAY];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, EO);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, EO);
     expect(vp).toBe(-10);
   });
 
   test("is not worth any negative VP if with Bridge", () => {
     const cards = [EO, BRIDGE];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, EO);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, EO);
     expect(vp).toBe(0);
   });
 
   test("is worth 10 extra for Reds, -10 for Grays and no change for Bridge", () => {
     const cards = [EO, DARROW, UNCLE_NAROL, HOLIDAY, BRIDGE];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, EO);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, EO);
     expect(vp).toBe(10);
   });
 });
@@ -232,31 +232,31 @@ describe("Harmony", () => {
 
   test("is worth 33 extra if alone", () => {
     const cards = [HARMONY];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, HARMONY);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, HARMONY);
     expect(vp).toBe(33);
   });
 
   test("is worth 33 extra if only with Reds, Pinks, Browns and/or Obsidians", () => {
     const cards = [HARMONY, DARROW, EVEY, GARDENER, SEFI];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, HARMONY);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, HARMONY);
     expect(vp).toBe(33);
   });
 
   test("is not worth anything extra if anything but Reds, Pinks, Browns and/or Obsidians", () => {
     const cards = [HARMONY, NERO];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, HARMONY);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, HARMONY);
     expect(vp).toBe(0);
   });
 });
@@ -270,21 +270,21 @@ describe("Uncle Narol", () => {
 
   test("is worth 40 VP extra if with only cards of 10 or less core value", () => {
     const cards = [UNCLE_NAROL, DARROW, MODJOB, DEVELOPER, JOPHO];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, UNCLE_NAROL);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, UNCLE_NAROL);
     expect(vp).toBe(40);
   });
 
   test("is not worth anything extra if one or more cards of more than 10 core value", () => {
     const cards = [UNCLE_NAROL, DARROW, NERO];
-    const playerState = {
-      ...NULL_PLAYER_STATE,
+    const player = {
+      ...NULL_PLAYER,
       cards,
     };
-    const vp = calculateEndGameBonus(NULL_GAME_STATE, playerState, UNCLE_NAROL);
+    const vp = calculateEndGameBonus(NULL_GAME_STATE, player, UNCLE_NAROL);
     expect(vp).toBe(0);
   });
 });

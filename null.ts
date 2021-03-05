@@ -1,8 +1,8 @@
-import { Board, Card, GameState, PlayerState } from "./types";
+import { Board, Card, GameState, Player } from "./types";
 
 export const NULL_CARDS: Card[] = [];
 
-export const NULL_PLAYER_STATE: PlayerState = {
+export const NULL_PLAYER: Player = {
   cards: [],
   fleetTrackPosition: 0,
   helium: 0,
@@ -21,5 +21,5 @@ export const NULL_GAME_STATE: GameState = {
   deck: NULL_CARDS,
   banished: NULL_CARDS,
   board: NULL_BOARD,
-  players: [NULL_PLAYER_STATE],
+  players: [NULL_PLAYER],
 };
