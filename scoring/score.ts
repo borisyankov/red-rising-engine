@@ -1,4 +1,4 @@
-import { Color, Card, Player, GameState, Board } from "../types";
+import { Color, Card, Player, GameState, Board } from '../types';
 
 const fleetTrackVPs = [0, 1, 3, 6, 10, 15, 21, 28, 34, 39, 43];
 
@@ -11,7 +11,7 @@ export const sum = (values: number[]) =>
 export const getCards = (input: Player | Board | Card[]): Card[] => {
   if (Array.isArray(input)) {
     return input;
-  } else if ("cards" in input) {
+  } else if ('cards' in input) {
     return (input as Player).cards;
   }
 
@@ -23,37 +23,24 @@ export const getCards = (input: Player | Board | Card[]): Card[] => {
   ];
 };
 
-export const countOf = (
-  input: Player | Board | Card[],
-  str: Color | string
-): number => {
+export const countOf = (input: Player | Board | Card[], str: Color | string): number => {
   const cards = getCards(input);
   return cards.filter((x) => x.color === str || x.name === str).length;
 };
 
-export const isWith = (
-  input: Player | Board | Card[],
-  str: Color | string
-): boolean => {
+export const isWith = (input: Player | Board | Card[], str: Color | string): boolean => {
   const cards = getCards(input);
   return cards.filter((x) => x.color === str || x.name === str).length > 0;
 };
 
-export const notWith = (
-  input: Player | Board | Card[],
-  str: Color | string
-): boolean => !isWith(input, str);
+export const notWith = (input: Player | Board | Card[], str: Color | string): boolean => !isWith(input, str);
 
-export const isFurthestOrTiedOnFleetTrack = (
-  gameState: GameState,
-  player: Player
-) => false;
+export const isFurthestOrTiedOnFleetTrack = (gameState: GameState, player: Player) => false;
 
 export const isFleetTrackPosition = (player: Player, positions: number[]) =>
   positions.includes(player.fleetTrackPosition);
 
-export const haveMostInfluence = (gameState: GameState, player: Player) =>
-  false;
+export const haveMostInfluence = (gameState: GameState, player: Player) => false;
 
 export const haveMostOrTiedForHelium = (player: Player) => false;
 
@@ -63,14 +50,9 @@ export const areUnique = (arr: string[]) => arr.length === unique(arr).length;
 
 // export const calculateScoreForCard = (card: Card[]): number => 0;
 
-export const calculateScoreForCards = (cards: Card[]): number =>
-  sum(cards.map((card) => card.coreValue)); // + card.getEndGameBonusValue({});
+export const calculateScoreForCards = (cards: Card[]): number => sum(cards.map((card) => card.coreValue)); // + card.getEndGameBonusValue({});
 
-export const calculateEndGameBonus = (
-  g: GameState,
-  p: Player,
-  card: Card
-): number => {
+export const calculateEndGameBonus = (g: GameState, p: Player, card: Card): number => {
   if (!card.getEndGameBonusValue) {
     return 0;
   }

@@ -1,12 +1,12 @@
-import { Card } from "../../types";
-import { countOf } from "../../scoring/score";
+import { Card } from '../../types';
+import { countOf } from '../../scoring/score';
 
 export const ASSASSIN: Card = {
-  name: "Assassin",
-  color: "brown",
+  name: 'Assassin',
+  color: 'brown',
   coreValue: 5,
   deployAbility:
     "Banish the card directly under this one. If it's a Gold, place 1 Influence on the Institute.",
-  endGameBonuses: "{10} for each Obsidian.",
-  getEndGameBonusValue: ({ p }) => [{ vp: 10 * countOf(p, "obsidian") }],
+  endGameBonuses: '{10} for each Obsidian.',
+  getEndGameBonusValue: ({ p }) => [{ vp: 10 * countOf(p, 'obsidian') }],
 };
