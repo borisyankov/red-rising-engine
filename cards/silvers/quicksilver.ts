@@ -8,5 +8,5 @@ export const QUICKSILVER: Card = {
   deployAbility:
     'Steal 1 Helium from the opponent with the most Helium (if tied, you choose which of those opponents).',
   endGameBonuses: '{-30} if any opponent has more Helium than you.',
-  getEndGameBonusValue: ({ p }) => [{ vp: -30, if: !haveMostOrTiedForHelium(p) }],
+  getEndGameBonusValue: ({ g, p }) => [{ vp: -30, if: !haveMostOrTiedForHelium(g, p) }],
 };

@@ -41,7 +41,23 @@ All cards VP = ???
 How many with no deploy ability
 How many with end game scoring
 
-18 cards allow you to gain other cards - 16% of cards, all Grays, all Oranges and 4 other - Developer; green, drVirany; yellow, Alfrun; obsidian, Jopho; obsidian
+Cards that allow you to gain other cards:
+
+- all Grays (but you end your turn)
+- all Oranges (but you end your turn)
+- Developer; green (end turn),
+- drVirany; yellow (end of game),
+- Alfrun; obsidian (Nero or Jopho)
+- Jopho; obsidian (Alfrun or Nero)
+- Holo Host; violet !!!
+- Mustang; gold !!! (banished card)
+- Tactus; gold (steal but end turn)
+- Cassius; gold !!!
+- Victra; gold !!!
+- Octavia; gold !!!
+- Ash Lord; gold !!!
+- Lysander; gold !!!
+- Romulus; gold !!!
 
 13 cards can have negative VP if
 

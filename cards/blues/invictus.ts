@@ -3,7 +3,7 @@ import { isFurthestOrTiedOnFleetTrack } from '../../scoring/score';
 
 export const INVICTUS: Card = {
   name: 'Administrator',
-  color: 'copper',
+  color: 'blue',
   coreValue: 19,
   deployAbility: 'If deployed on Mars, advance once on the Fleet Track.',
   endGameBonuses:

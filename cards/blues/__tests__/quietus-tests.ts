@@ -28,7 +28,7 @@ describe('Quietus', () => {
     expect(vp).toBe(16);
   });
 
-  test('is not worthy anything extra 16 VP if someone else has more Influence', () => {
+  test('is not worthy anything extra if someone else has more Influence', () => {
     const vp = calculateEndGameBonus(game, player2, QUIETUS);
     expect(vp).toBe(0);
   });
