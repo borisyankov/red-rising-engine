@@ -8,7 +8,7 @@ export const LAWYER: Card = {
   deployAbility: 'Place 1 Influence on the Institute.',
   endGameBonuses: '{12} if with a White (not the Judge). {22} if with the Judge.',
   getEndGameBonusValue: ({ p }) => [
-    { vp: 12, if: isWith(p, 'white') && notWith(p, 'The Judge') },
-    { vp: 22, if: isWith(p, 'The Judge') },
+    { vp: 12, if: isWith(p, 'white') && notWith(p, 'Judge') },
+    { vp: 22, if: isWith(p, 'Judge') },
   ],
 };

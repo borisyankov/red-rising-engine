@@ -10,6 +10,8 @@ export const sum = (values: number[]) =>
 
 export const max = (values: number[]) => Math.max.apply(null, values);
 
+export const min = (values: number[]) => Math.min.apply(null, values);
+
 export const getCards = (input: Player | Board | Card[]): Card[] => {
   if (Array.isArray(input)) {
     return input;
@@ -46,14 +48,18 @@ export const isFleetTrackPosition = (player: Player, positions: number[]) =>
 export const haveMostInfluence = (gameState: GameState, player: Player) =>
   player.influence === max(gameState.players.map((x) => x.influence));
 
+export const haveLeastInfluence = (gameState: GameState, player: Player) =>
+  player.influence === min(gameState.players.map((x) => x.influence));
+
+export const anotherHaveSameInfluence = (gameState: GameState, player: Player) =>
+  !!gameState.players.filter((x) => x !== player).find((x) => x.influence === player.influence);
+
 export const haveMostOrTiedForHelium = (gameState: GameState, player: Player) =>
   player.helium === max(gameState.players.map((x) => x.helium));
 
 export const unique = (arr: string[]) => [...new Set(arr)];
 
 export const areUnique = (arr: string[]) => arr.length === unique(arr).length;
-
-// export const calculateScoreForCard = (card: Card[]): number => 0;
 
 export const calculateScoreForCards = (cards: Card[]): number => sum(cards.map((card) => card.coreValue)); // + card.getEndGameBonusValue({});
 
