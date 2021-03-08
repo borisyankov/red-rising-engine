@@ -1,9 +1,9 @@
-import { NULL_CARD, NULL_CARDS } from '../../null';
+import { NULL_CARDS } from '../../null';
 import { GameState, Player } from '../../types';
 import * as C from '../../cards';
 import { calculatePlayerScore } from '../score';
 
-describe('Real games score', () => {
+describe('real games score 1', () => {
   const b: Player = {
     fleetTrackPosition: 0,
     helium: 6,
@@ -114,6 +114,63 @@ describe('Real games score', () => {
       sovereignty: 0,
       influence: 16,
       extraCards: -30,
+    });
+  });
+});
+
+describe('real games score 2', () => {
+  const b: Player = {
+    fleetTrackPosition: 2,
+    helium: 7,
+    sovereignty: false,
+    influence: 10,
+    cards: [C.TIMONY, C.THE_HOWLERS, C.MAGISTRATE, C.NANNY, C.CODEBREAKER, C.ASH_LORD, C.SEER, C.DARROW],
+  };
+  const a: Player = { // automa
+    fleetTrackPosition: 10,
+    helium: 4,
+    sovereignty: true,
+    influence: 4,
+    cards: [],
+  };
+
+  const game: GameState = {
+    deck: NULL_CARDS,
+    banished: [C.VIRGA],
+    board: {
+      jupiter: [C.DIPLOMAT, C.MODJOB, C.UNCLE_NAROL],
+      mars: [C.LOAN_SHARK],
+      luna: [C.MASSEUSE, C.DANTO, C.LAWYER, C.CEO, C.MORNING_STAR],
+      theInstitute: [C.POLITICIAN],
+    },
+    players: [a, b],
+  };
+
+  test('game score for player B is correctly calculated', () => {
+    const result = calculatePlayerScore(game, b);
+    expect(result).toEqual({
+      endGameAbilities: 0,
+      cardsCore: 122,
+      cardsBonus: 80,
+      fleetTrack: 3,
+      helium: 21,
+      sovereignty: 0,
+      influence: 40,
+      extraCards: -10,
+    });
+  });
+
+  test('game score for player A is correctly calculated', () => {
+    const result = calculatePlayerScore(game, a);
+    expect(result).toEqual({
+      endGameAbilities: 0,
+      cardsCore: 0,
+      cardsBonus: 0,
+      fleetTrack: 43,
+      helium: 12,
+      sovereignty: 10,
+      influence: 8,
+      extraCards: 0,
     });
   });
 });
