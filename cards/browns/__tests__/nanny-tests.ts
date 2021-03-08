@@ -1,11 +1,11 @@
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { NANNY, BANKER, SEER, LAWYER } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 
 describe('Nanny', () => {
   test("is worth 10 VP on it's own", () => {
     const cards = [NANNY];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(10);
   });
 

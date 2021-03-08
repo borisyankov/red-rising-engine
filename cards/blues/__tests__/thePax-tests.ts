@@ -1,11 +1,11 @@
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { THE_PAX, DARROW, NERO } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 
 describe('The Pax', () => {
   test("is worth 20 VP on it's own", () => {
     const cards = [THE_PAX];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(20);
   });
 

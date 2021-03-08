@@ -1,11 +1,11 @@
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { DARROW, DEVELOPER, JOPHO, MODJOB, NERO, UNCLE_NAROL } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 
 describe('Uncle Narol', () => {
   test("is worth 10 VP on it's own", () => {
     const cards = [UNCLE_NAROL];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(10);
   });
 

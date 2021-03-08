@@ -1,12 +1,12 @@
 import { Player } from '../../../types';
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { ADMINISTRATOR } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 
 describe('Administrator', () => {
   test("is worth 15 VP on it's own", () => {
     const cards = [ADMINISTRATOR];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(15);
   });
 

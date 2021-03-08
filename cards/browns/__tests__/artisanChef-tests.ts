@@ -1,11 +1,11 @@
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { ARTISAN_CHEF, CASSIUS, DANCER, DARROW, MUSTANG, NERO } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 
 describe('Artisan Chef', () => {
   test("is worth 10 VP on it's own", () => {
     const cards = [ARTISAN_CHEF];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(10);
   });
 

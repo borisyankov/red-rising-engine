@@ -5,6 +5,7 @@ import {
   isFurthestOrTiedOnFleetTrack,
   haveMostInfluence,
   haveMostOrTiedForHelium,
+  calculateScoreForInfluence,
 } from '../score';
 import * as CARDS from '../../cards';
 import { NULL_CARDS, NULL_GAME_STATE, NULL_PLAYER } from '../../null';
@@ -166,5 +167,54 @@ describe('haveMostOrTiedForHelium', () => {
   test('Player3 has less helium than at least one other player, hence not "most"', () => {
     const result = haveMostOrTiedForHelium(game, player3);
     expect(result).toBe(false);
+  });
+});
+
+describe('calculateScoreForInfluence', () => {
+  const jamey: Player = {
+    ...NULL_PLAYER,
+    influence: 10,
+  };
+  const megan: Player = {
+    ...NULL_PLAYER,
+    influence: 10,
+  };
+  const biddy: Player = {
+    ...NULL_PLAYER,
+    influence: 5,
+  };
+  const walter: Player = {
+    ...NULL_PLAYER,
+    influence: 2,
+  };
+  const null1: Player = NULL_PLAYER;
+  const null2: Player = NULL_PLAYER;
+
+  test('null', () => {
+    const game = {
+      ...NULL_GAME_STATE,
+      players: [null1, null2],
+    };
+    expect(calculateScoreForInfluence(game, null1)).toBe(0);
+  });
+
+  test('rule book scores are calculated correctly', () => {
+    const game = {
+      ...NULL_GAME_STATE,
+      players: [jamey, megan, biddy, walter],
+    };
+    expect(calculateScoreForInfluence(game, jamey)).toBe(40);
+    expect(calculateScoreForInfluence(game, megan)).toBe(40);
+    expect(calculateScoreForInfluence(game, biddy)).toBe(10);
+    expect(calculateScoreForInfluence(game, walter)).toBe(2);
+  });
+
+  test('null & walter', () => {
+    const game = {
+      ...NULL_GAME_STATE,
+      players: [null1, walter],
+    };
+    expect(calculateScoreForInfluence(game, null1)).toBe(0);
+    expect(calculateScoreForInfluence(game, walter)).toBe(8);
   });
 });

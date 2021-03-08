@@ -1,11 +1,11 @@
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { ASH_LORD, DARROW, EO, PELUS, THE_PAX, VIRGA } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 
 describe('Ash Lord', () => {
   test("is worth 25 VP on it's own", () => {
     const cards = [ASH_LORD];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(25);
   });
 

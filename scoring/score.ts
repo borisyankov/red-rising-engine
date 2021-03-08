@@ -1,4 +1,4 @@
-import { Color, Card, Player, GameState, Board } from '../types';
+import { Color, Card, Player, GameState, Board, PlayerScore } from '../types';
 
 const fleetTrackVPs = [0, 1, 3, 6, 10, 15, 21, 28, 34, 39, 43];
 
@@ -29,12 +29,12 @@ export const getCards = (input: Player | Board | Card[]): Card[] => {
 
 export const countOf = (input: Player | Board | Card[], str: Color | string): number => {
   const cards = getCards(input);
-  return cards.filter((x) => x.color === str || x.name === str).length;
+  return cards.filter((x) => x.color === str || x.extraColor === str || x.name === str).length;
 };
 
 export const isWith = (input: Player | Board | Card[], str: Color | string): boolean => {
   const cards = getCards(input);
-  return cards.filter((x) => x.color === str || x.name === str).length > 0;
+  return cards.filter((x) => x.color === str || x.extraColor === str || x.name === str).length > 0;
 };
 
 export const notWith = (input: Player | Board | Card[], str: Color | string): boolean => !isWith(input, str);
@@ -57,11 +57,9 @@ export const anotherHaveSameInfluence = (gameState: GameState, player: Player) =
 export const haveMostOrTiedForHelium = (gameState: GameState, player: Player) =>
   player.helium === max(gameState.players.map((x) => x.helium));
 
-export const unique = (arr: string[]) => [...new Set(arr)];
+export const unique = <T>(arr: T[]): T[] => [...new Set(arr)];
 
 export const areUnique = (arr: string[]) => arr.length === unique(arr).length;
-
-export const calculateScoreForCards = (cards: Card[]): number => sum(cards.map((card) => card.coreValue)); // + card.getEndGameBonusValue({});
 
 export const calculateEndGameBonus = (g: GameState, p: Player, card: Card): number => {
   if (!card.getEndGameBonusValue) {
@@ -74,11 +72,31 @@ export const calculateEndGameBonus = (g: GameState, p: Player, card: Card): numb
   return sum(vps);
 };
 
-const calculateTotalScore = (player: Player) =>
-  123 + // perform end of game actions
-  calculateScoreForCards(player.cards) +
-  fleetTrackVPs[player.fleetTrackPosition] +
-  player.helium * 3 +
-  (player.sovereignty ? 10 : 0) +
-  player.influence * 4 +
-  (player.cards.length <= 7 ? 0 : (player.cards.length - 7) * -10);
+export const calculateScoreForCardsCore = (cards: Card[]): number => sum(cards.map((card) => card.coreValue));
+
+export const calculateScoreForCardsBonus = (game: GameState, player: Player): number =>
+  sum(player.cards.map((card) => calculateEndGameBonus(game, player, card)));
+
+export const calculateScoreForFleetTrack = (player: Player): number =>
+  fleetTrackVPs[player.fleetTrackPosition];
+
+export const calculateScoreForInfluence = (game: GameState, player: Player): number => {
+  const influences = unique(game.players.map((x) => x.influence)).sort((a, b) => b - a);
+  const position = influences.indexOf(player.influence);
+  const multiplier = [4, 2, 1, 1][position];
+  return player.influence * multiplier;
+};
+
+export const calculateScoreForExtraCards = (player: Player): number =>
+  player.cards.length <= 7 ? 0 : (player.cards.length - 7) * -10;
+
+export const calculatePlayerScore = (game: GameState, player: Player): PlayerScore => ({
+  endGameAbilities: 0,
+  cardsCore: calculateScoreForCardsCore(player.cards),
+  cardsBonus: calculateScoreForCardsBonus(game, player),
+  fleetTrack: calculateScoreForFleetTrack(player),
+  helium: player.helium * 3,
+  sovereignty: player.sovereignty ? 10 : 0,
+  influence: calculateScoreForInfluence(game, player),
+  extraCards: calculateScoreForExtraCards(player),
+});

@@ -1,11 +1,11 @@
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { DARROW, EVEY, GARDENER, MATTEO, MUSICIAN, VLOGGER, ZANZIBAR } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 
 describe('Gardener', () => {
   test("is worth 10 VP on it's own", () => {
     const cards = [GARDENER];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(10);
   });
 

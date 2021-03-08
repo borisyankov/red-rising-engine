@@ -1,4 +1,4 @@
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { INVICTUS } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 import { Player } from '../../../types';
@@ -6,7 +6,7 @@ import { Player } from '../../../types';
 describe('Invictus', () => {
   test("is worth 19 VP on it's own", () => {
     const cards = [INVICTUS];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(19);
   });
 

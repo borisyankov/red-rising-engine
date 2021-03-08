@@ -1,4 +1,10 @@
-import { Board, Card, GameState, Player } from "./types";
+import { Board, Card, GameState, Player } from './types';
+
+export const NULL_CARD: Card = {
+  name: '',
+  color: 'gray',
+  coreValue: 0,
+};
 
 export const NULL_CARDS: Card[] = [];
 

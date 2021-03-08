@@ -44,12 +44,24 @@ export type GameState = {
 export type Card = {
   name: string;
   color: Color;
+  extraColor?: Color;
   coreValue: number;
   deployAbility?: string;
   endOfGameAbility?: string;
   endGameBonuses?: string;
   blockAbility?: string;
   getEndGameBonusValue?: (params: { g: GameState; p: Player }) => VpPredicate[];
+};
+
+export type PlayerScore = {
+  endGameAbilities: number;
+  cardsCore: number;
+  cardsBonus: number;
+  fleetTrack: number;
+  helium: number;
+  sovereignty: number;
+  influence: number;
+  extraCards: number;
 };
 
 const houseApollo =

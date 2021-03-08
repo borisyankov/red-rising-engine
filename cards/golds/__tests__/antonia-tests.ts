@@ -1,4 +1,4 @@
-import { calculateEndGameBonus, calculateScoreForCards } from '../../../scoring/score';
+import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
 import { ANTONIA, BONERIDERS, FITCHNER, MUSTANG, ORION, ROQUE, SEVRO, VICTRA } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
 import { THE_JACKAL } from '../theJackal';
@@ -6,7 +6,7 @@ import { THE_JACKAL } from '../theJackal';
 describe('Antonia', () => {
   test("is worth 15 VP on it's own", () => {
     const cards = [ANTONIA];
-    const vp = calculateScoreForCards(cards);
+    const vp = calculateScoreForCardsCore(cards);
     expect(vp).toBe(15);
   });
 
