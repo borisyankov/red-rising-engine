@@ -6,9 +6,9 @@ export const FITCHNER: Card = {
   color: 'gold',
   coreValue: 25,
   deployAbility: 'If deployed to the Institute, place 1 Influence there.',
-  endGameBonuses: '{10} if with a Red. {10} if with Servo.',
+  endGameBonuses: '{10} if with a Red. {10} if with Sevro.',
   getEndGameBonusValue: ({ p }) => [
     { vp: 10, if: isWith(p, 'red') },
-    { vp: 10, if: isWith(p, 'Servo') },
+    { vp: 10, if: isWith(p, 'Sevro') },
   ],
 };
