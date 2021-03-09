@@ -9,7 +9,7 @@ export const VICTRA: Card = {
     "Gain the bottom card of this location (if it's not this card). Banish Victra unless you deployed her on a Gold.",
   endGameBonuses: '{10} if with the Howlers. {10} if with Sevro or Darrow.',
   getEndGameBonusValue: ({ p }) => [
-    { vp: 11, if: isWith(p, 'The Howlers') },
-    { vp: 11, if: isWith(p, 'Sevro') || isWith(p, 'Darrow') },
+    { vp: 10, if: isWith(p, 'The Howlers') },
+    { vp: 10, if: isWith(p, 'Sevro') || isWith(p, 'Darrow') },
   ],
 };

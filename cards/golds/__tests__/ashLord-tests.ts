@@ -19,7 +19,7 @@ describe('Ash Lord', () => {
     expect(vp).toBe(0);
   });
 
-  test('with 5 VP for each Blue card', () => {
+  test('worth 5 VP for each Blue card', () => {
     const cards = [ASH_LORD, VIRGA, PELUS];
     const player = {
       ...NULL_PLAYER,

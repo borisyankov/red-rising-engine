@@ -1,7 +1,6 @@
 import { calculateEndGameBonus, calculateScoreForCardsCore } from '../../../scoring/score';
-import { ANTONIA, BONERIDERS, FITCHNER, MUSTANG, ORION, ROQUE, SEVRO, VICTRA } from '../..';
+import { ANTONIA, BONERIDERS, FITCHNER, MUSTANG, THE_JACKAL, ROQUE, SEVRO, VICTRA } from '../..';
 import { NULL_GAME_STATE, NULL_PLAYER } from '../../../null';
-import { THE_JACKAL } from '../theJackal';
 
 describe('Antonia', () => {
   test("is worth 15 VP on it's own", () => {

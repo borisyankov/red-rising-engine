@@ -29,7 +29,7 @@ describe('Karnus', () => {
     expect(vp).toBe(-15);
   });
 
-  test('is not worth anything extra (positive or negative) if  with other cards', () => {
+  test('is not worth anything extra (positive or negative) if with other cards', () => {
     const cards = [KARNUS, DARROW, FITCHNER];
     const player = {
       ...NULL_PLAYER,
